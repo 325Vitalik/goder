@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Goder.DAL.Context;
-using Microsoft.EntityFrameworkCore;
 
 namespace Goder.DAL.Models
 {

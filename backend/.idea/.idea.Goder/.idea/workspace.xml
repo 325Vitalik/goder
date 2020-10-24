@@ -34,9 +34,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b741dcd7-07ba-48ad-97bf-e8974fc2f364" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Goder.DAL/Models/Problem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Goder.DAL/Models/Problem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Goder.DAL/Models/Solution.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Goder.DAL/Models/Solution.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Goder.DAL/Models/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Goder.DAL/Models/Test.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Goder/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Goder.DAL/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Goder.DAL/Models/User.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,14 +109,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603545745082</updated>
-      <workItem from="1603545755291" duration="425000" />
+      <workItem from="1603545755291" duration="734000" />
+      <workItem from="1603555177574" duration="566000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -130,6 +129,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

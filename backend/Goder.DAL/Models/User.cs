@@ -17,5 +17,6 @@ namespace Goder.DAL.Models
         public ICollection<Solution> CreatedSolutions { get; set; }
 
         
+        
     }
 }

@@ -6,7 +6,7 @@ namespace Goder.DAL.Models
     public class Solution
     {
         public Guid Id { get; set; }
-        public DateTime CreatedAt { get; set; }
+        public DateTimeOffset CreatedAt { get; set; }
         public SolutionResults Result { get; set; }
         public int ExecutionTime { get; set; }
         public int ExecutionMemory { get; set; }

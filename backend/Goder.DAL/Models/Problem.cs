@@ -6,7 +6,7 @@ namespace Goder.DAL.Models
     public class Problem
     {
         public Guid Id { get; set;  }
-        public DateTime CreatedAt { get; set; }
+        public DateTimeOffset CreatedAt { get; set; }
         public String Name { get; set; }
         public String Description { get; set; }
         public int TimeLimit { get; set; }

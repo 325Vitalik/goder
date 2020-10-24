@@ -5,7 +5,7 @@ namespace Goder.DAL.Models
     public class Test
     {
         public Guid Id { get; set; }
-        public DateTime CreatedAt { get; set; }
+        public DateTimeOffset CreatedAt { get; set; }
         public string Input { get; set; }
         public string Output { get; set; }
         

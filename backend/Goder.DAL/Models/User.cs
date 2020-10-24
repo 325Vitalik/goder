@@ -8,8 +8,8 @@ namespace Goder.DAL.Models
         public Guid Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public DateTime  Birthday { get; set; }
+        public DateTimeOffset CreatedAt { get; set; }
+        public DateTimeOffset  Birthday { get; set; }
         public string Email { get; set; }
         public string AvatarURL { get; set; }
         

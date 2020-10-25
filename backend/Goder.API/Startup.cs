@@ -7,6 +7,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using Goder.DAL.Context;
+using Microsoft.Extensions.Configuration;
 
 namespace Goder.API
 {
@@ -25,6 +28,8 @@ namespace Goder.API
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<GoderContext>(options => options.UseMySql(Configuration.GetConnectionString("GoderDBConnection")));
+
             services.AddControllers()
                     .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
@@ -53,8 +58,7 @@ namespace Goder.API
                     };
                 });
         }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+s
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

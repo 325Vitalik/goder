@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SomeFetureModule } from './some-feture/some-feture.module';
+import { SomeFeatureComponent } from './components/some-feature/some-feature.component';
 
 @NgModule({
-    declarations: [],
-    imports: [CommonModule, SomeFetureModule],
+    declarations: [SomeFeatureComponent],
+    imports: [CommonModule],
 })
 export class ScenesModule {}

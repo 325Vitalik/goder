@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -9,7 +8,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Goder.DAL.Context;
-using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 namespace Goder.API
 {
@@ -57,8 +57,10 @@ namespace Goder.API
                         ValidateLifetime = true
                     };
                 });
+
+            services.AddHealthChecks()
+                .AddDbContextCheck<GoderContext>("DbContextHealthCheck", HealthStatus.Healthy, tags: new[] { "db_ok"});
         }
-s
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -74,7 +76,18 @@ s
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints => endpoints.MapControllers());
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+                endpoints.MapHealthChecks("/healthAuth", new HealthCheckOptions
+                {
+                    Predicate = _ => _.Tags.Contains("db_ok")
+                }).RequireAuthorization();
+                endpoints.MapHealthChecks("/health", new HealthCheckOptions
+                {
+                    Predicate = _ => _.Tags.Contains("db_ok")
+                });
+            });
         }
     }
 }

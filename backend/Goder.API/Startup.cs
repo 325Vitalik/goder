@@ -10,6 +10,8 @@ using Microsoft.EntityFrameworkCore;
 using Goder.DAL.Context;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using AutoMapper;
+using System.Reflection;
 
 namespace Goder.API
 {
@@ -57,6 +59,11 @@ namespace Goder.API
                         ValidateLifetime = true
                     };
                 });
+
+            services.AddAutoMapper(cfg =>
+            {
+                // cfg.AddProfile<{NameOfProfile}>();
+            }, Assembly.GetExecutingAssembly());
 
             services.AddHealthChecks()
                 .AddDbContextCheck<GoderContext>("DbContextHealthCheck", HealthStatus.Healthy, tags: new[] { "db_ok"});
